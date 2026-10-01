@@ -1,0 +1,252 @@
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --primary-color: #df320b;      /* Rojo principal */
+    --primary-hover: #b82405;      /* Rojo más oscuro para el hover */
+    --primary-light: #fff5f5;      /* Fondo rojo muy suave */
+    --border-color: #e2e8f0;
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+
+.estudiante-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.card .Carrera {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Estilo para destacar el promedio */
+.card .Promedio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.card .Promedio::before {
+    content: "Promedio: ";
+    color: var(--text-secondary);
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+
+/* Botón Seleccionar (Rojo Sólido) */
+.btn-seleccionar {
+    margin-top: auto; 
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.btn-seleccionar:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Botón Eliminar Permanente (Rojo con contorno / Outline) */
+.btn-eliminar-base {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.btn-eliminar-base:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* Botón del Formulario Agregar (Rojo Sólido) */
+#btn-agregar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#btn-agregar:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Botón Restablecer (Gris neutral para no competir visualmente) */
+.btn-reset {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    background-color: #e2e8f0;
+    color: var(--text-primary);
+}
+
+.btn-reset:hover {
+    background-color: #cbd5e0;
+}
+
+
+#lista-alumnos {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#lista-alumnos li {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--primary-color); /* Detalle de línea roja */
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+#lista-alumnos li:hover {
+    background-color: #edf2f7;
+}
+
+/* Botón de cruz (X) para deseleccionar */
+.btn-borrar-item {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.btn-borrar-item:hover {
+    background-color: #fed7d7;
+    transform: scale(1.1);
+}
+
+#form-alumno {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(223, 50, 11, 0.15); /* Brillo sutil rojo al enfocar */
+}

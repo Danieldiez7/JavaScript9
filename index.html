@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea JavaScript 7</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <main class="wrapper">
+        <h1>Pre-Entrega 9: Asincronismo y Promesas </h1>
+        <hr/>
+        
+        <h2> Listado de Estudiantes : </h2>
+        
+        <section id="busqueda-container" class="busqueda-seccion">
+            <h2>Buscar Estudiante</h2>
+            <input type="text" id="inputBuscar" placeholder="Ingrese el nombre a buscar">
+            <div id="resultadoBusqueda"></div>
+            <button id="btnFilter" class="btn-filter">Buscar</button>
+            <button id="btnReset" class="btn-reset">Restablecer</button>
+        </section>
+
+        <!-- Formulario para agregar estudiantes -->
+        <section id="agregar-container" class="agregar-seccion">
+            <h2>Agregar Nuevo Estudiante</h2>
+            <form id="form-alumno">
+                <input type="text" id="nombre" placeholder="Nombre" required />
+                <input type="text" id="apellido" placeholder="Apellido" required />
+                <input type="text" id="carrera"  placeholder="Carrera" required/>
+                <input type="number" id="promedio" placeholder="Promedio" step="0.1" required />
+                <button type="submit" id="btn-agregar">Agregar</button>
+            </form>
+            <ul id="lista-alumnos"></ul>
+        </section>
+
+        <!-- Contenedor para mostrar la lista de estudiantes -->
+        <section id="estudiante-container" class="estudiante-grid">
+            <!-- Estructura card estudiantes -->
+            <!-- <div class="card">
+                <h3>Nombre de estudiante </h3>
+                <p class = "Carrera"> xxxxxx </p>
+                <p class="Promedio"> xxx </p>
+                <button class="btn-seleccionar"> Seleccionar</button>
+            </div> -->
+        </section>
+    </main>
+</body>
+</html>
