@@ -179,3 +179,24 @@ inputBuscar.addEventListener("input", () => {
 // Inicialización
 mostrarEstudiantes(estudiantes);
 renderizarAlumnos();
+
+// ⏳ Temporizador: Muestra un mensaje informativo 2 segundos después de ingresar
+setTimeout(() => {
+    //Alerta informativa en pantalla
+    const bannerInfo = document.createElement("div");
+    bannerInfo.className = "banner-bienvenida";
+    bannerInfo.innerHTML = `
+        <div style="background-color: #ebf8ff; color: #2b6cb0; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #bee3f8; text-align: center;">
+            <p><strong>💡 ¡Tip del Sistema!</strong> Podés registrar nuevos estudiantes usando el formulario y buscar en tiempo real por nombre o apellido.</p>
+        </div>
+    `;
+    
+    // Lo insertamos al principio del contenedor principal (por ejemplo, antes del contenedor de estudiantes)
+    const mainContainer = document.querySelector("main") || document.body;
+    mainContainer.insertBefore(bannerInfo, mainContainer.firstChild);
+
+    setTimeout(() => {
+        bannerInfo.remove();
+    }, 6000);
+
+}, 2000); // 3000 milisegundos 
